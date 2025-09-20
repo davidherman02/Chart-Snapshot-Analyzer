@@ -1,93 +1,93 @@
 # 📊 Chart Snapshot Analyzer
 
-**Автоматический анализ графиков и генерация отчётов**
+**Automatic Chart Analysis & Report Generation**
 
-Система для автоматического создания снимков графиков по заданным условиям, анализа технических паттернов и генерации детальных отчётов. Поддерживает анализ пробоев, дивергенций, изменений тренда и других паттернов без необходимости ручного просмотра каждого графика.
+A system for automated chart snapshots based on predefined conditions, technical pattern analysis, and detailed report generation. Supports detection of breakouts, divergences, trend changes, and other patterns without the need to manually review each chart.  
 
-## ✨ Возможности
+## ✨ Features
 
-### 🔍 Автоматический анализ
-- **Пробои уровней** - обнаружение пробоев поддержки и сопротивления
-- **Дивергенции** - анализ расхождений между ценой и индикаторами
-- **Изменения тренда** - выявление смены рыночных настроений
-- **Аномалии объёма** - обнаружение необычной торговой активности
-- **Технические сигналы** - RSI, MACD, скользящие средние
+### 🔍 Automatic Analysis
+- **Breakouts** – detect support and resistance breakouts  
+- **Divergences** – analyze discrepancies between price and indicators  
+- **Trend changes** – identify market sentiment shifts  
+- **Volume anomalies** – detect unusual trading activity  
+- **Technical signals** – RSI, MACD, moving averages  
 
-### 📈 Визуализация
-- **Профессиональные графики** с техническими индикаторами
-- **Сравнительный анализ** нескольких символов
-- **Настраиваемые стили** и параметры отображения
-- **Высокое качество** снимков для отчётов
+### 📈 Visualization
+- **Professional charts** with technical indicators  
+- **Comparative analysis** across multiple symbols  
+- **Customizable styles** and display parameters  
+- **High-quality snapshots** for reporting  
 
-### 📋 Отчёты
-- **HTML отчёты** с интерактивными элементами
-- **Markdown отчёты** для документации
-- **Детальная статистика** по всем паттернам
-- **Автоматическая группировка** по типам сигналов
+### 📋 Reports
+- **HTML reports** with interactive elements  
+- **Markdown reports** for documentation  
+- **Detailed statistics** for all patterns  
+- **Automatic grouping** by signal type  
 
-### 🔌 Интеграции
-- **Yahoo Finance** - акции, ETF, индексы
-- **Binance API** - криптовалютные пары
-- **Настраиваемые провайдеры** данных
-- **Гибкая конфигурация** через YAML
+### 🔌 Integrations
+- **Yahoo Finance** – stocks, ETFs, indices  
+- **Binance API** – crypto pairs  
+- **Custom data providers** supported  
+- **Flexible configuration** via YAML  
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### Установка
+### Installation
 
 ```bash
-# Клонируйте репозиторий
+# Clone the repository
 git clone https://github.com/your-username/chart-snapshot-analyzer.git
 cd chart-snapshot-analyzer
 
-# Установите зависимости
+# Install dependencies
 pip install -r requirements.txt
 
-# Или установите как пакет
+# Or install as a package
 pip install -e .
 ```
 
-### Базовое использование
+### Basic Usage
 
 ```python
 from main import ChartSnapshotAnalyzer
 
-# Создаём анализатор
+# Create analyzer
 analyzer = ChartSnapshotAnalyzer("config.yaml")
 
-# Анализируем список тикеров
+# Analyze tickers
 tickers = ["AAPL", "GOOGL", "MSFT", "TSLA"]
 reports = analyzer.run_analysis(tickers, "1h")
 
-print(f"Создано отчётов: {len(reports)}")
+print(f"Reports generated: {len(reports)}")
 ```
 
-### Командная строка
+### Command Line
 
 ```bash
-# Анализ акций
+# Analyze stocks
 python main.py --tickers AAPL GOOGL MSFT --timeframe 1h
 
-# Анализ криптовалют
+# Analyze cryptocurrencies
 python main.py --tickers BTC/USDT ETH/USDT --timeframe 4h
 
-# С пользовательской конфигурацией
+# With custom config
 python main.py --tickers SPY QQQ --timeframe 15m --config custom_config.yaml
 ```
 
-## 📖 Документация
+## 📖 Documentation
 
-### Конфигурация
+### Configuration
 
-Основные настройки находятся в файле `config.yaml`:
+Main settings are in `config.yaml`:
 
 ```yaml
-# API настройки
+# API settings
 api:
   provider: yfinance  # yfinance, binance
-  rate_limit: 1.0     # задержка между запросами
+  rate_limit: 1.0     # delay between requests
 
-# Настройки графиков
+# Chart settings
 charts:
   width: 1200
   height: 800
@@ -96,7 +96,7 @@ charts:
     rsi: 14
     macd: [12, 26, 9]
 
-# Анализ паттернов
+# Pattern analysis
 patterns:
   breakout:
     enabled: true
@@ -104,47 +104,47 @@ patterns:
     volume_threshold: 1.5
 ```
 
-### Поддерживаемые индикаторы
+### Supported Indicators
 
-- **SMA** - простые скользящие средние
-- **EMA** - экспоненциальные скользящие средние  
-- **RSI** - индекс относительной силы
-- **MACD** - схождение/расхождение скользящих средних
-- **Bollinger Bands** - полосы Боллинджера
-- **Volume** - анализ объёма торгов
+- **SMA** – Simple Moving Average  
+- **EMA** – Exponential Moving Average  
+- **RSI** – Relative Strength Index  
+- **MACD** – Moving Average Convergence Divergence  
+- **Bollinger Bands**  
+- **Volume** – trade volume analysis  
 
-### Типы паттернов
+### Pattern Types
 
-#### Пробои уровней
-- **Пробои сопротивления** - прорыв выше локального максимума
-- **Пробои поддержки** - прорыв ниже локального минимума
-- **Фильтрация по объёму** - только значимые пробои
+#### Breakouts
+- **Resistance breakouts** – price breaks above local high  
+- **Support breakouts** – price breaks below local low  
+- **Volume filtering** – only significant breakouts  
 
-#### Дивергенции
-- **Бычьи дивергенции** - цена падает, RSI растёт
-- **Медвежьи дивергенции** - цена растёт, RSI падает
-- **Настраиваемая чувствительность** анализа
+#### Divergences
+- **Bullish divergences** – price falls, RSI rises  
+- **Bearish divergences** – price rises, RSI falls  
+- **Customizable sensitivity**  
 
-#### Изменения тренда
-- **Пересечения скользящих средних** (SMA 20/50)
-- **MACD сигналы** - бычьи и медвежьи пересечения
-- **RSI экстремумы** - перекупленность/перепроданность
+#### Trend Changes
+- **Moving average crossovers** (SMA 20/50)  
+- **MACD signals** – bullish/bearish crossovers  
+- **RSI extremes** – overbought/oversold levels  
 
-## 🛠️ Примеры использования
+## 🛠️ Usage Examples
 
-### Анализ акций
+### Stock Analysis
 
 ```python
-# Анализ крупных технологических компаний
+# Analyze large-cap tech companies
 analyzer = ChartSnapshotAnalyzer()
 tech_stocks = ["AAPL", "GOOGL", "MSFT", "AMZN", "META"]
 reports = analyzer.run_analysis(tech_stocks, "1d")
 ```
 
-### Анализ криптовалют
+### Crypto Analysis
 
 ```python
-# Настройка для Binance API
+# Configure Binance API
 config = Config("crypto_config.yaml")
 config.set('api.provider', 'binance')
 config.set('api.api_key', 'your_api_key')
@@ -154,10 +154,10 @@ crypto_pairs = ["BTC/USDT", "ETH/USDT", "BNB/USDT"]
 reports = analyzer.run_analysis(crypto_pairs, "4h")
 ```
 
-### Сравнительный анализ
+### Comparative Analysis
 
 ```python
-# Создание сравнительного графика
+# Create comparison chart
 chart_generator = ChartGenerator(config)
 comparison_chart = chart_generator.create_comparison_chart(
     symbols=["SPY", "QQQ", "IWM"],
@@ -166,149 +166,149 @@ comparison_chart = chart_generator.create_comparison_chart(
 )
 ```
 
-### Пользовательские паттерны
+### Custom Patterns
 
 ```python
-# Настройка чувствительности анализа
+# Adjust sensitivity
 config.set('patterns.breakout.volume_threshold', 1.2)
 config.set('patterns.divergence.min_divergence_strength', 0.2)
 
-# Более агрессивный поиск паттернов
+# More aggressive pattern detection
 analyzer = ChartSnapshotAnalyzer(config)
 ```
 
-## 📊 Структура проекта
+## 📊 Project Structure
 
 ```
 chart-snapshot-analyzer/
-├── main.py                 # Основной модуль
-├── config.yaml            # Конфигурация
-├── requirements.txt       # Зависимости
-├── setup.py              # Установочный скрипт
-├── src/                  # Исходный код
+├── main.py                 # Main module
+├── config.yaml             # Configuration
+├── requirements.txt        # Dependencies
+├── setup.py                # Setup script
+├── src/                    # Source code
 │   ├── __init__.py
-│   ├── config.py         # Управление конфигурацией
-│   ├── data_fetcher.py   # Получение данных
-│   ├── chart_generator.py # Создание графиков
-│   ├── pattern_analyzer.py # Анализ паттернов
-│   └── report_generator.py # Генерация отчётов
-├── examples/             # Примеры использования
+│   ├── config.py           # Config management
+│   ├── data_fetcher.py     # Data fetching
+│   ├── chart_generator.py  # Chart generation
+│   ├── pattern_analyzer.py # Pattern analysis
+│   └── report_generator.py # Report generation
+├── examples/               # Usage examples
 │   └── example_usage.py
-├── charts/              # Сохранённые графики
-├── reports/             # Сгенерированные отчёты
-├── logs/               # Логи работы
-└── data/               # Кэшированные данные
+├── charts/                 # Saved charts
+├── reports/                # Generated reports
+├── logs/                   # Logs
+└── data/                   # Cached data
 ```
 
-## 🔧 Разработка
+## 🔧 Development
 
-### Установка для разработки
+### Dev Installation
 
 ```bash
-# Клонируйте репозиторий
+# Clone repository
 git clone https://github.com/your-username/chart-snapshot-analyzer.git
 cd chart-snapshot-analyzer
 
-# Создайте виртуальное окружение
+# Create virtual env
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# или
-venv\Scripts\activate     # Windows
+# or
+venv\Scriptsctivate     # Windows
 
-# Установите зависимости для разработки
+# Install dev dependencies
 pip install -e ".[dev]"
 ```
 
-### Тестирование
+### Testing
 
 ```bash
-# Запуск тестов
+# Run tests
 pytest
 
-# С покрытием кода
+# With coverage
 pytest --cov=src
 
-# Проверка стиля кода
+# Code style checks
 flake8 src/
 black src/
 ```
 
-### Добавление новых провайдеров
+### Adding New Providers
 
 ```python
 class CustomProvider(DataProvider):
     def get_data(self, symbol: str, timeframe: str, limit: int = 1000):
-        # Ваша реализация
+        # Your implementation
         pass
     
     def get_available_symbols(self):
-        # Ваша реализация
+        # Your implementation
         pass
 ```
 
-## 📈 Производительность
+## 📈 Performance
 
-### Оптимизация запросов
-- **Кэширование данных** для повторного использования
-- **Настраиваемые лимиты** запросов к API
-- **Пакетная обработка** множественных символов
+### Query Optimization
+- **Data caching** for reuse  
+- **Customizable API rate limits**  
+- **Batch processing** for multiple symbols  
 
-### Масштабирование
-- **Параллельная обработка** символов
-- **Асинхронные запросы** к API
-- **Инкрементальный анализ** больших датасетов
+### Scalability
+- **Parallel symbol processing**  
+- **Asynchronous API requests**  
+- **Incremental analysis** of large datasets  
 
-## 🤝 Вклад в проект
+## 🤝 Contributing
 
-Мы приветствуем вклад в развитие проекта! Пожалуйста:
+We welcome contributions! Please:  
 
-1. Форкните репозиторий
-2. Создайте ветку для новой функции (`git checkout -b feature/amazing-feature`)
-3. Зафиксируйте изменения (`git commit -m 'Add amazing feature'`)
-4. Отправьте в ветку (`git push origin feature/amazing-feature`)
-5. Откройте Pull Request
+1. Fork the repo  
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)  
+3. Commit changes (`git commit -m 'Add amazing feature'`)  
+4. Push branch (`git push origin feature/amazing-feature`)  
+5. Open a Pull Request  
 
-### Рекомендации
-- Следуйте существующему стилю кода
-- Добавляйте тесты для новых функций
-- Обновляйте документацию
-- Используйте осмысленные сообщения коммитов
+### Guidelines
+- Follow existing code style  
+- Add tests for new features  
+- Update documentation  
+- Use meaningful commit messages  
 
-## 📄 Лицензия
+## 📄 License
 
-Этот проект распространяется под лицензией MIT. См. файл [LICENSE](LICENSE) для подробностей.
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.  
 
-## 🆘 Поддержка
+## 🆘 Support
 
-### Часто задаваемые вопросы
+### FAQ
 
-**Q: Как добавить новый индикатор?**
-A: Расширьте класс `TechnicalIndicators` в `src/chart_generator.py`
+**Q: How to add a new indicator?**  
+A: Extend the `TechnicalIndicators` class in `src/chart_generator.py`  
 
-**Q: Можно ли использовать другие источники данных?**
-A: Да, создайте новый провайдер, наследуясь от `DataProvider`
+**Q: Can I use other data sources?**  
+A: Yes, by creating a new provider inheriting from `DataProvider`  
 
-**Q: Как настроить чувствительность анализа?**
-A: Измените параметры в секции `patterns` файла `config.yaml`
+**Q: How to tune analysis sensitivity?**  
+A: Edit parameters in the `patterns` section of `config.yaml`  
 
-### Получение помощи
+### Get Help
 
-- 📧 Email: chart.analysis@example.com
-- 🐛 Issues: [GitHub Issues](https://github.com/your-username/chart-snapshot-analyzer/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/your-username/chart-snapshot-analyzer/discussions)
+- 📧 Email: chart.analysis@example.com  
+- 🐛 Issues: [GitHub Issues](https://github.com/your-username/chart-snapshot-analyzer/issues)  
+- 💬 Discussions: [GitHub Discussions](https://github.com/your-username/chart-snapshot-analyzer/discussions)  
 
-## 🏷️ Теги
+## 🏷️ Tags
 
 `trading` `analysis` `charts` `technical-analysis` `finance` `cryptocurrency` `stocks` `patterns` `breakouts` `divergences` `reports` `automation` `python` `matplotlib` `pandas` `yfinance` `binance`
 
-## 📊 Статистика
+## 📊 Badges
 
-![GitHub stars](https://img.shields.io/github/stars/your-username/chart-snapshot-analyzer?style=social)
-![GitHub forks](https://img.shields.io/github/forks/your-username/chart-snapshot-analyzer?style=social)
-![GitHub issues](https://img.shields.io/github/issues/your-username/chart-snapshot-analyzer)
-![GitHub license](https://img.shields.io/github/license/your-username/chart-snapshot-analyzer)
-![Python version](https://img.shields.io/pypi/pyversions/chart-snapshot-analyzer)
+![GitHub stars](https://img.shields.io/github/stars/your-username/chart-snapshot-analyzer?style=social)  
+![GitHub forks](https://img.shields.io/github/forks/your-username/chart-snapshot-analyzer?style=social)  
+![GitHub issues](https://img.shields.io/github/issues/your-username/chart-snapshot-analyzer)  
+![GitHub license](https://img.shields.io/github/license/your-username/chart-snapshot-analyzer)  
+![Python version](https://img.shields.io/pypi/pyversions/chart-snapshot-analyzer)  
 
 ---
 
-**Сделано с ❤️ для трейдеров и аналитиков**
+**Made with ❤️ for traders and analysts**  
