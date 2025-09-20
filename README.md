@@ -291,12 +291,6 @@ A: Yes, by creating a new provider inheriting from `DataProvider`
 **Q: How to tune analysis sensitivity?**  
 A: Edit parameters in the `patterns` section of `config.yaml`  
 
-### Get Help
-
-- 📧 Email: chart.analysis@example.com  
-- 🐛 Issues: [GitHub Issues](https://github.com/your-username/chart-snapshot-analyzer/issues)  
-- 💬 Discussions: [GitHub Discussions](https://github.com/your-username/chart-snapshot-analyzer/discussions)  
-
 ## 🏷️ Tags
 
 `trading` `analysis` `charts` `technical-analysis` `finance` `cryptocurrency` `stocks` `patterns` `breakouts` `divergences` `reports` `automation` `python` `matplotlib` `pandas` `yfinance` `binance`
